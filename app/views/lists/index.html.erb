@@ -1,10 +1,23 @@
+<div class="bg-dark text-secondary px-4 py-5 text-center">
+    <div class="py-5">
+      <h1 class="display-5 fw-bold text-white">WOCHA</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-5 mb-4">Create lists of movies to watch. Simple.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <%= link_to "Create List", new_list_path(@lists), :class => "btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" %>
+          <!-- <button type="button" class="btn btn-outline-light btn-lg px-4">Delete List</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
 <div class="container">
 	<div class="row">
 		<% @lists.each do |list| %>
-			<div class="col-4">
+			<div class="col-4 mt-4">
 				<div class="card">
 					<div class="card-body">
 						<h3 class="card-title"><%= list.name %></h3>
+						<%= link_to "View List", list_path(list), :class => "btn btn-outline-secondary btn-large" %>
 					</div>
 				</div>
 			</div>	
