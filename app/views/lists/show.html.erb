@@ -1,10 +1,13 @@
 <div class="container mt-5">
 			<h2><%= @list.name %></h2>
 
-			<div class="card mt-2 p-2">
+			<div class="card mt-2 p-5">
 				<% @list.movies.each do |movie| %>
 				<h3><%= movie.title %></h3>
-				<h5><%= movie.overview %></h5>
+				<div class="d-flex">
+				<p class="pr-5"><%= movie.overview %></p>
+				<%= image_tag(movie.poster_url, {:style => "width:100px;"}) %>
+				</div>
 					<% movie.bookmarks.each do |bookmark| %>
 						<% if bookmark.list_id == @list.id %>
 						<h5 class="font-italic">"<%= bookmark.comment %>"</h5>
